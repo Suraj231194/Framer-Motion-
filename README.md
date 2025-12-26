@@ -99,4 +99,4 @@ Follow these steps to run the project locally:
 
 ---
 
-Developed with ❤️ by **Antigravity**
+Developed with ❤️ by **Suraj Pawar**
