@@ -68,25 +68,6 @@ export const productsData = [
         image: docsimImg
     },
     {
-        id: 'doxtract',
-        badge: 'Doxtract',
-        brandLogo: brandDoxtract,
-        title: 'Extract, Validate, and Process Documents with Ease',
-        features: [
-            'OCR and NLP-based data extraction.',
-            'Handles unstructured documents across industries.',
-            'Validates fields using external data sources.'
-        ],
-        benefits: [
-            'Process 10,000+ documents in minutes.',
-            'Achieve 99% data accuracy with AI-driven validation.'
-        ],
-        icon: FileSearch,
-        layout: 'left',
-        visualColor: 'from-orange-500 to-red-500',
-        image: doxtractImg
-    },
-    {
         id: 'docpilot',
         badge: 'DocPilot',
         brandLogo: brandDocPilot,
@@ -104,6 +85,25 @@ export const productsData = [
         layout: 'right',
         visualColor: 'from-purple-600 to-blue-600',
         image: docpilotImg
+    },
+    {
+        id: 'doxtract',
+        badge: 'Doxtract',
+        brandLogo: brandDoxtract,
+        title: 'Extract, Validate, and Process Documents with Ease',
+        features: [
+            'OCR and NLP-based data extraction.',
+            'Handles unstructured documents across industries.',
+            'Validates fields using external data sources.'
+        ],
+        benefits: [
+            'Process 10,000+ documents in minutes.',
+            'Achieve 99% data accuracy with AI-driven validation.'
+        ],
+        icon: FileSearch,
+        layout: 'left',
+        visualColor: 'from-orange-500 to-red-500',
+        image: doxtractImg
     }
 ];
 

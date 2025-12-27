@@ -1,89 +1,121 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { industriesData } from '../constants/data';
-import dotsIndustry1 from '../images/dots_industry_1.png';
-import dotsIndustry2 from '../images/dots_industry_2.png';
-import blueCircle from '../images/blue_circle.png';
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { industriesData } from "../constants/data";
 
+import dotsIndustry1 from "../images/dots_industry_1.png";
+import dotsIndustry2 from "../images/dots_industry_2.png";
+import blueCircle from "../images/blue_circle.png";
+
+/* ---------------- CHIP ICON ---------------- */
 const ChipIcon = ({ Icon }) => (
     <div className="relative w-16 h-16 flex items-center justify-center mb-6">
-        {/* Circuit/Chip Background Effect */}
-        <div className="absolute inset-0 border-2 border-orange-200 rounded-xl bg-orange-50/50 backdrop-blur-sm"></div>
+        {/* Background */}
+        <div className="absolute inset-0 rounded-xl border-2 border-orange-200 bg-orange-50/50 backdrop-blur-sm" />
 
-        {/* Nodes/Dots on the border - Decorative */}
-        <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full box-shadow-glow"></div>
-        <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full box-shadow-glow"></div>
-        <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 bg-orange-400 rounded-full box-shadow-glow"></div>
-        <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-orange-400 rounded-full box-shadow-glow"></div>
+        {/* Decorative Dots */}
+        <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full" />
+        <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-orange-400 rounded-full" />
+        <span className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 bg-orange-400 rounded-full" />
+        <span className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-orange-400 rounded-full" />
 
-        <div className="absolute -top-1 left-1/3 w-1 h-3 bg-white"></div>
-        <div className="absolute -top-1 right-1/3 w-1 h-3 bg-white"></div>
-
-        {/* Inner Icon */}
-        <div className="relative text-blue-600 z-10">
+        {/* Icon */}
+        <div className="relative z-10 text-blue-600">
             <Icon size={32} strokeWidth={1.5} />
         </div>
     </div>
 );
 
+/* ---------------- MAIN SECTION ---------------- */
 const Industries = () => {
     const sectionRef = useRef(null);
-    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
-    const yBg = useTransform(scrollYProgress, [0, 1], [0, -50]);
+
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"],
+    });
+
+    const yBg = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
     return (
-        <section ref={sectionRef} className="relative py-20 lg:py-32 overflow-hidden bg-white" id="industries">
-            {/* Background Elements */}
+        <section
+            ref={sectionRef}
+            id="industries"
+            className="relative overflow-hidden bg-white py-20 lg:py-32"
+        >
+            {/* ================= BACKGROUND ELEMENTS ================= */}
 
-            {/* 1. Large Blue Ring styling - Left aligned behind text */}
+            {/* Blue Gradient Ring (Figma matched) */}
             <motion.div
                 style={{ y: yBg }}
-                className="absolute left-[-15%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] -z-10 pointer-events-none opacity-80"
+                className="absolute -left-[22%] top-1/2 -translate-y-1/2 
+                   w-[850px] h-[850px] 
+                   -z-10 pointer-events-none opacity-80"
             >
-                <img src={blueCircle} alt="Background Ring" className="w-full h-full object-contain" />
+                <img
+                    src={blueCircle}
+                    alt="Background Ring"
+                    className="w-full h-full object-contain"
+                />
             </motion.div>
 
-            {/* 2. Top Right Dots */}
-            <div className="absolute right-10 top-20 z-0 pointer-events-none opacity-40 hidden lg:block">
-                <img src={dotsIndustry1} alt="Dots Pattern" className="w-32 h-auto" />
+            {/* Top Right Dots */}
+            <div className="absolute right-10 top-24 hidden lg:block opacity-40 pointer-events-none">
+                <img src={dotsIndustry1} alt="Dots" className="w-32" />
             </div>
 
-            {/* 3. Bottom Right Dots */}
-            <div className="absolute right-20 bottom-20 z-0 pointer-events-none opacity-40 hidden lg:block">
-                <img src={dotsIndustry2} alt="Dots Pattern" className="w-48 h-auto" />
+            {/* Bottom Right Dots */}
+            <div className="absolute right-20 bottom-24 hidden lg:block opacity-40 pointer-events-none">
+                <img src={dotsIndustry2} alt="Dots" className="w-48" />
             </div>
 
-            <div className="container mx-auto px-6">
-                <div className="mb-12 max-w-xl relative">
-                    <motion.div
+            {/* ================= CONTENT ================= */}
+            <div className="container mx-auto px-6 relative z-10">
+                {/* Header */}
+                <div className="mb-14 max-w-xl">
+                    <motion.span
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4 }}
+                        className="text-[#D96324] font-semibold mb-3 block tracking-wide text-lg"
+                    >
+                        AI-driven innovation for growth.
+                    </motion.span>
+
+                    <motion.h2
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
+                        className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
                     >
-                        <span className="text-[#D96324] font-semibold mb-3 block tracking-wide text-lg">
-                            AI-driven innovation for growth.
-                        </span>
-                        <h2 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
-                            Industries We Empower
-                        </h2>
-                    </motion.div>
+                        Industries We Empower
+                    </motion.h2>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8 items-start relative min-h-[400px]">
+                {/* Cards */}
+                <div className="grid md:grid-cols-3 gap-8 relative">
                     {industriesData.map((item, idx) => (
                         <motion.div
                             key={item.id}
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -10, boxShadow: "0 20px 40px -10px rgba(0,0,0,0.1)" }}
-                            transition={{ duration: 0.4, delay: idx * 0.15 }}
-                            className={`bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col items-center text-center transition-all ${item.offset}`}
+                            transition={{ duration: 0.45, delay: idx * 0.15 }}
+                            whileHover={{
+                                y: -10,
+                                boxShadow: "0 20px 40px rgba(0,0,0,0.12)",
+                            }}
+                            className={`bg-white rounded-[2rem] p-8 text-center
+                          border border-gray-100
+                          shadow-[0_8px_30px_rgba(0,0,0,0.05)]
+                          transition-all ${item.offset}`}
                         >
                             <ChipIcon Icon={item.icon} />
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                            <p className="text-gray-500 leading-relaxed text-sm lg:text-base">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                                {item.title}
+                            </h3>
+                            <p className="text-gray-500 text-sm lg:text-base leading-relaxed">
                                 {item.description}
                             </p>
                         </motion.div>
