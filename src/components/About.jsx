@@ -3,6 +3,7 @@ import Section from './Section';
 import { Eye, Target, Linkedin, Twitter, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { teamMembers } from '../constants/data';
+import combinedCircle from '../assets/combined_circle.png';
 
 const About = () => {
     const [activeIndex, setActiveIndex] = useState(1);
@@ -22,8 +23,14 @@ const About = () => {
     }, []);
 
     return (
-        <Section id="about" className="bg-white overflow-hidden py-24">
-            <div className="container mx-auto px-6">
+        <Section id="about" className="bg-white overflow-hidden py-24 relative">
+            {/* Background Shape */}
+            <div className="absolute left-[-10%] top-1/2 -translate-y-1/2 w-[600px] h-[600px] z-0 pointer-events-none opacity-40">
+                <img src={combinedCircle} alt="Background Shape" className="w-full h-full object-contain" />
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
+                {/* ... existing content ... */}
 
                 {/* Header */}
                 <div className="text-center mb-20">
