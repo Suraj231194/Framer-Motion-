@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Button from './Button';
 
 import { productsData } from '../constants/data';
+import gradientCircle from '../assets/gradient_circle.png';
 
 const ProductCard = ({ product }) => {
     const isTextLeft = product.layout === 'left';
@@ -127,10 +128,17 @@ const ProductCard = ({ product }) => {
     );
 };
 
+
+
 const Products = () => {
     return (
-        <section id="products" className="py-24 bg-gray-50/50">
-            <div className="container mx-auto px-6">
+        <section id="products" className="py-24 bg-gray-50/50 relative overflow-hidden">
+            {/* Background Gradient Circle */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[800px] h-[800px] z-0 pointer-events-none opacity-50">
+                <img src={gradientCircle} alt="Background Gradient" className="w-full h-full object-contain" />
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
 
                 {/* Header */}
                 <div className="mb-20 text-center">
