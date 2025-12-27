@@ -135,17 +135,17 @@ const Products = () => {
         <section id="products" className="py-24 bg-gray-50/50 relative overflow-hidden">
             {/* Background Gradient Circles */}
             {/* Top Right - Behind DocSim */}
-            <div className="absolute -right-[10%] -top-[10%] w-[800px] h-[800px] z-0 pointer-events-none opacity-40">
+            <div className="absolute -right-[30%] -top-[5%] lg:-right-[10%] lg:-top-[10%] w-[400px] h-[400px] lg:w-[800px] lg:h-[800px] z-0 pointer-events-none opacity-40">
                 <img src={gradientCircle} alt="Background Gradient" className="w-full h-full object-contain" />
             </div>
 
             {/* Middle Left - Behind DocPilot */}
-            <div className="absolute -left-[5%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] z-0 pointer-events-none opacity-40">
+            <div className="absolute -left-[30%] top-[40%] lg:-left-[5%] lg:top-1/2 -translate-y-1/2 w-[400px] h-[400px] lg:w-[800px] lg:h-[800px] z-0 pointer-events-none opacity-40">
                 <img src={gradientCircle} alt="Background Gradient" className="w-full h-full object-contain" />
             </div>
 
             {/* Bottom Right - Behind Doxtract */}
-            <div className="absolute -right-[5%] -bottom-[10%] w-[800px] h-[800px] z-0 pointer-events-none opacity-40">
+            <div className="absolute -right-[30%] -bottom-[5%] lg:-right-[5%] lg:-bottom-[10%] w-[400px] h-[400px] lg:w-[800px] lg:h-[800px] z-0 pointer-events-none opacity-40">
                 <img src={gradientCircle} alt="Background Gradient" className="w-full h-full object-contain" />
             </div>
 

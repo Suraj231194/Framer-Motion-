@@ -47,8 +47,8 @@ const Industries = () => {
             {/* Blue Gradient Ring (Figma matched) */}
             <motion.div
                 style={{ y: yBg }}
-                className="absolute -left-[22%] top-1/2 -translate-y-1/2 
-                   w-[850px] h-[850px] 
+                className="absolute -left-[40%] lg:-left-[22%] top-1/2 -translate-y-1/2 
+                   w-[500px] h-[500px] lg:w-[850px] lg:h-[850px] 
                    -z-10 pointer-events-none opacity-80"
             >
                 <img
