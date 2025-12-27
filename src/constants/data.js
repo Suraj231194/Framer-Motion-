@@ -1,6 +1,9 @@
 import { Shield, Banknote, HeartPulse, Layers, Zap, FileSearch } from 'lucide-react';
 import licenseCard from '../assets/license_card.png';
 import invoiceDoc from '../assets/invoice_document.png';
+import docsimImg from '../assets/docsim.png';
+import doxtractImg from '../assets/doxtract.png';
+import docpilotImg from '../assets/docpilot.png';
 
 export const navLinks = [
     { name: 'Home', href: '#' },
@@ -46,40 +49,55 @@ export const productsData = [
         id: 'docsim',
         badge: 'DocSim',
         title: 'AI-Powered Document Similarity Engine',
-        description: [
-            'Detects near-duplicates and tampered documents with high precision.',
-            'Identifies fraudulent patterns across large repositories instantly.',
+        features: [
+            'Detects near-duplicates and tampered documents.',
+            'Identifies fraudulent patterns across large repositories.',
             'Multi-language support for global adaptability.'
+        ],
+        benefits: [
+            'Save 30% time on manual checks.',
+            'Reduce document fraud by up to 40%.'
         ],
         icon: Layers,
         layout: 'left',
-        visualColor: 'from-blue-600 to-cyan-500'
+        visualColor: 'from-blue-600 to-cyan-500',
+        image: docsimImg
     },
     {
-        id: 'workflows',
-        badge: 'DocFlow',
-        title: 'Streamline Document Workflows with Automation',
-        description: [
-            'Automate document collection, entry, and verification cycles.',
-            'Integrate seamlessly with existing ERP and CRM systems.',
-            'Reduce manual entry errors by up to 99%.'
-        ],
-        icon: Zap,
-        layout: 'right',
-        visualColor: 'from-purple-600 to-blue-600'
-    },
-    {
-        id: 'extract',
-        badge: 'DocExtract',
+        id: 'doxtract',
+        badge: 'Doxtract',
         title: 'Extract, Validate, and Process Documents with Ease',
-        description: [
-            'Extract unstructured data from invoices, receipts, and forms.',
-            'Real-time validation against external databases.',
-            'Customizable rules engine for specific business needs.'
+        features: [
+            'OCR and NLP-based data extraction.',
+            'Handles unstructured documents across industries.',
+            'Validates fields using external data sources.'
+        ],
+        benefits: [
+            'Process 10,000+ documents in minutes.',
+            'Achieve 99% data accuracy with AI-driven validation.'
         ],
         icon: FileSearch,
         layout: 'left',
-        visualColor: 'from-orange-500 to-red-500'
+        visualColor: 'from-orange-500 to-red-500',
+        image: doxtractImg
+    },
+    {
+        id: 'docpilot',
+        badge: 'DocPilot',
+        title: 'Streamline Document Workflows with Automation',
+        features: [
+            'Automates document collection, routing, and task assignments.',
+            'Real-time tracking with advanced dashboards.',
+            'Seamless integration with enterprise systems via APIs.'
+        ],
+        benefits: [
+            'Reduce turnaround times by 50%.',
+            'Improve operational efficiency with minimal manual effort.'
+        ],
+        icon: Zap,
+        layout: 'right',
+        visualColor: 'from-purple-600 to-blue-600',
+        image: docpilotImg
     }
 ];
 
@@ -110,26 +128,20 @@ export const teamMembers = [
 export const blogPosts = [
     {
         id: 1,
-        title: "The Future of AI in Document Processing",
-        date: "Dec 12, 2024",
-        category: "Technology",
-        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800&h=500",
-        excerpt: "How artificial intelligence is revolutionizing the way businesses handle paperwork and compliance."
+        title: "How AI is Revolutionizing Document Management for Enterprises",
+        date: "24 July, 2023",
+        excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and..."
     },
     {
         id: 2,
-        title: "Preventing Fraud with Machine Learning",
-        date: "Nov 28, 2024",
-        category: "Security",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800&h=500",
-        excerpt: "Discover the latest techniques in fraud detection and how ML models are staying one step ahead."
+        title: "Top 5 Fraud Prevention Strategies for Financial Institutions",
+        date: "24 July, 2023",
+        excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and..."
     },
     {
         id: 3,
-        title: "Streamlining Workflows for Enterprise",
-        date: "Nov 15, 2024",
-        category: "Business",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=500",
-        excerpt: "Tips and strategies for optimizing your document management systems for maximum efficiency."
+        title: "The Future of OCR: From Basic Extraction to AI-Driven Intelligence",
+        date: "24 July, 2023",
+        excerpt: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and..."
     }
 ];

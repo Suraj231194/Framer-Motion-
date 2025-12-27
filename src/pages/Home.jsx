@@ -51,7 +51,7 @@ const Home = () => {
                 <About />
                 <Contact />
             </main>
-            <Footer />
+
         </div>
     );
 };

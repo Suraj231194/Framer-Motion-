@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Button from './Button';
-import { Check } from 'lucide-react';
+
 import { productsData } from '../constants/data';
 
 const ProductCard = ({ product }) => {
@@ -52,15 +52,36 @@ const ProductCard = ({ product }) => {
                     {product.title}
                 </h3>
 
-                <div className="space-y-4 mb-8">
-                    {product.description.map((item, idx) => (
-                        <div key={idx} className="flex gap-4 items-start">
-                            <div className="w-5 h-5 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 mt-1">
-                                <Check size={12} strokeWidth={3} />
+                <div className="space-y-6 mb-8 text-left">
+                    {/* Features */}
+                    {product.features && (
+                        <div>
+                            <h4 className="text-gray-900 font-bold mb-3">Features:</h4>
+                            <div className="space-y-2">
+                                {product.features.map((item, idx) => (
+                                    <div key={idx} className="flex gap-3 items-start">
+                                        <span className="text-gray-400 mt-1">•</span>
+                                        <p className="text-gray-600 leading-relaxed text-[15px]">{item}</p>
+                                    </div>
+                                ))}
                             </div>
-                            <p className="text-gray-600 leading-relaxed">{item}</p>
                         </div>
-                    ))}
+                    )}
+
+                    {/* Benefits */}
+                    {product.benefits && (
+                        <div>
+                            <h4 className="text-gray-900 font-bold mb-3">Benefits:</h4>
+                            <div className="space-y-2">
+                                {product.benefits.map((item, idx) => (
+                                    <div key={idx} className="flex gap-3 items-start">
+                                        <span className="text-gray-400 mt-1">•</span>
+                                        <p className="text-gray-600 leading-relaxed text-[15px]">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 <div className="flex gap-4">
@@ -92,19 +113,13 @@ const ProductCard = ({ product }) => {
                     <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
                     <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
 
-                    {/* Abstract Content Representation */}
-                    <div className="absolute inset-0 flex items-center justify-center p-12" style={{ transform: "translateZ(50px)" }}>
-                        {/* Glassmorphism Card */}
-                        <div className="relative w-full h-full bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 p-8 flex flex-col items-center justify-center transition-transform duration-500 shadow-xl">
-                            <product.icon size={80} className="text-white/80 mb-6 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
-
-                            {/* Fake UI Lines */}
-                            <div className="w-24 h-1 bg-white/20 rounded-full mb-3"></div>
-                            <div className="w-16 h-1 bg-white/10 rounded-full mb-8"></div>
-
-                            {/* Glowing Orb/Accent */}
-                            <div className={`absolute bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-br ${product.visualColor} blur-md opacity-60 animate-pulse`}></div>
-                        </div>
+                    {/* Product Image */}
+                    <div className="absolute inset-0" style={{ transform: "translateZ(50px)" }}>
+                        <img
+                            src={product.image}
+                            alt={product.title}
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                 </motion.div>
             </motion.div>
@@ -122,9 +137,9 @@ const Products = () => {
                     <span className="text-[#D96324] font-semibold mb-2 block tracking-wide uppercase text-sm">
                         features and benefits.
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                    <h3 className="text-3xl md:text-5xl font-bold text-gray-900">
                         Our Products
-                    </h2>
+                    </h3>
                 </div>
 
                 {/* Products Grid */}

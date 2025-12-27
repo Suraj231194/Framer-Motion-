@@ -1,76 +1,74 @@
 import React from 'react';
 import Button from './Button';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
     return (
-        <section id="contact" className="py-24 bg-gray-50 relative overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <section id="contact" className="relative bg-white pt-24 pb-0">
+            {/* Blue Footer Background Strip - Absolute positioned to sit at the bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-[#4374B9] z-0"></div>
 
-                    {/* Left Side: Info */}
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-16">
+
+                    {/* Left Side: Content */}
                     <motion.div
-                        className="space-y-8"
+                        className="flex flex-col justify-between h-full pb-12"
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div>
-                            <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
-                            <p className="text-[#D96324] font-medium mb-6">Let's build the future of document processing together.</p>
-                            <p className="text-gray-600 leading-relaxed max-w-md">
-                                Have questions about our AI solutions? Our team is ready to help you optimize your workflows and ensure security.
+                        {/* Top Section (on White) */}
+                        <div className="mb-20">
+                            <h2 className="text-5xl font-bold text-gray-900 mb-6">Contact Us</h2>
+                            <p className="text-[#D96324] text-lg mb-1 leading-relaxed">
+                                Lorem Ipsum is simply dummy text of the printing and
                             </p>
+                            <p className="text-[#4374B9] text-lg mb-12 leading-relaxed">
+                                typesetting industry. Lorem Ipsum has been the industry's.
+                            </p>
+
+                            <div className="space-y-10">
+                                {/* US Office */}
+                                <div>
+                                    <div className="flex items-center gap-2 mb-3">
+                                        <MapPin className="text-[#D96324]" size={20} />
+                                        <h4 className="font-bold text-gray-900 border-b-2 border-black inline-block pb-0.5">U.S. Office</h4>
+                                    </div>
+                                    <p className="text-gray-700 max-w-sm text-sm leading-relaxed pl-7">
+                                        Aadrila Technologies INC,<br />
+                                        8 The Green, Ste R, in the City of Dover County of Kent Zip Code 19901.
+                                    </p>
+                                </div>
+
+                                {/* India Office */}
+                                <div>
+                                    <div className="flex items-center gap-2 mb-3">
+                                        <MapPin className="text-[#D96324]" size={20} />
+                                        <h4 className="font-bold text-gray-900 border-b-2 border-black inline-block pb-0.5">India Office</h4>
+                                    </div>
+                                    <p className="text-gray-700 max-w-sm text-sm leading-relaxed pl-7">
+                                        Aadrila Technologies Private Limited,<br />
+                                        Unit 707, Lotus Trade Centre, Sahakar Nagar, New Link Road, Near D.N.Nagar, Andheri West, Mumbai, Maharashtra 400053.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="space-y-6">
-                            <motion.div
-                                className="flex items-center gap-4"
-                                whileHover={{ x: 10 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                            >
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0">
-                                    <Mail size={20} />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-gray-500">Email Us</div>
-                                    <div className="font-semibold text-gray-900">contact@aadrila.ai</div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                className="flex items-center gap-4"
-                                whileHover={{ x: 10 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                            >
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0">
-                                    <Phone size={20} />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-gray-500">Call Us</div>
-                                    <div className="font-semibold text-gray-900">+1 (555) 000-0000</div>
-                                </div>
-                            </motion.div>
-                            <motion.div
-                                className="flex items-center gap-4"
-                                whileHover={{ x: 10 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                            >
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0">
-                                    <MapPin size={20} />
-                                </div>
-                                <div>
-                                    <div className="text-sm text-gray-500">Visit Us</div>
-                                    <div className="font-semibold text-gray-900">123 AI Plaza, Tech City, CA</div>
-                                </div>
-                            </motion.div>
+                        {/* Bottom Section (on Blue) -> Footer Text */}
+                        <div className="text-white/80 text-xs space-y-4 pt-10">
+                            <p>© 2025 by Aadrila Technologies Private Limited CIN U74999UP2017PTC094688</p>
+                            <p className="max-w-md bg-transparent">
+                                Registered Address: B-1, 127/K, Sector-K Aliganj, Lucknow, Lucknow, Uttar Pradesh, India, 226024
+                            </p>
                         </div>
                     </motion.div>
 
                     {/* Right Side: Form Card */}
                     <motion.div
-                        className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100"
+                        className="bg-white rounded-[2rem] p-8 md:p-12 shadow-2xl mb-12"
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
@@ -79,48 +77,70 @@ const Contact = () => {
                         <form className="space-y-6">
                             <div className="grid grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                                     <motion.input
-                                        whileFocus={{ scale: 1.02, textShadow: "0px 0px 8px rgb(255,255,255)" }}
+                                        whileFocus={{ scale: 1.01 }}
                                         type="text"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all bg-gray-50"
-                                        placeholder="John"
+                                        className="w-full px-4 py-4 rounded-xl border border-gray-300 placeholder-gray-400 focus:border-[#4374B9] focus:ring-1 focus:ring-[#4374B9] outline-none transition-all"
+                                        placeholder="Full Name"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
                                     <motion.input
-                                        whileFocus={{ scale: 1.02 }}
+                                        whileFocus={{ scale: 1.01 }}
+                                        type="email"
+                                        className="w-full px-4 py-4 rounded-xl border border-gray-300 placeholder-gray-400 focus:border-[#4374B9] focus:ring-1 focus:ring-[#4374B9] outline-none transition-all"
+                                        placeholder="Email"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-6">
+                                <div>
+                                    <motion.input
+                                        whileFocus={{ scale: 1.01 }}
                                         type="text"
-                                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all bg-gray-50"
-                                        placeholder="Doe"
+                                        className="w-full px-4 py-4 rounded-xl border border-gray-300 placeholder-gray-400 focus:border-[#4374B9] focus:ring-1 focus:ring-[#4374B9] outline-none transition-all"
+                                        placeholder="Phone Number"
+                                    />
+                                </div>
+                                <div>
+                                    <motion.input
+                                        whileFocus={{ scale: 1.01 }}
+                                        type="text"
+                                        className="w-full px-4 py-4 rounded-xl border border-gray-300 placeholder-gray-400 focus:border-[#4374B9] focus:ring-1 focus:ring-[#4374B9] outline-none transition-all"
+                                        placeholder="Company Name"
                                     />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                                 <motion.input
-                                    whileFocus={{ scale: 1.02 }}
-                                    type="email"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all bg-gray-50"
-                                    placeholder="john@company.com"
+                                    whileFocus={{ scale: 1.01 }}
+                                    type="text"
+                                    className="w-full px-4 py-4 rounded-xl border border-gray-300 placeholder-gray-400 focus:border-[#4374B9] focus:ring-1 focus:ring-[#4374B9] outline-none transition-all"
+                                    placeholder="Inquiry Type"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                                 <motion.textarea
-                                    whileFocus={{ scale: 1.02 }}
-                                    rows="4"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all resize-none bg-gray-50"
-                                    placeholder="Tell us about your needs..."
+                                    whileFocus={{ scale: 1.01 }}
+                                    rows="6"
+                                    className="w-full px-4 py-4 rounded-xl border border-gray-300 placeholder-gray-400 focus:border-[#4374B9] focus:ring-1 focus:ring-[#4374B9] outline-none transition-all resize-none"
+                                    placeholder="Message"
                                 ></motion.textarea>
                             </div>
 
-                            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                                <Button className="w-full py-4 text-lg rounded-xl shadow-lg shadow-blue-500/30">Send Message</Button>
-                            </motion.div>
+                            <div className="pt-2">
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="w-full py-4 text-lg font-medium rounded-full bg-[#4374B9] text-white shadow-lg shadow-blue-500/30 hover:bg-[#365d91] transition-colors"
+                                    type="button"
+                                >
+                                    Send Inquiry
+                                </motion.button>
+                            </div>
                         </form>
                     </motion.div>
 

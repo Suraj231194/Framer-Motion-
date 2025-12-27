@@ -2,46 +2,58 @@ import React from 'react';
 import Section from './Section';
 import { motion } from 'framer-motion';
 import Button from './Button';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../constants/data';
 
 const Blogs = () => {
     return (
-        <Section id="blog" className="bg-white py-24">
-            <div className="container mx-auto px-6">
+        <Section id="blog" className="bg-white py-24 relative overflow-hidden">
+            {/* Background Decorative Dots */}
+            <div className="absolute top-10 left-10 opacity-20 hidden lg:block">
+                <div className="grid grid-cols-4 gap-2">
+                    {[...Array(16)].map((_, i) => (
+                        <div key={i} className="w-2 h-2 rounded-full bg-gray-400"></div>
+                    ))}
+                </div>
+            </div>
+            <div className="absolute bottom-10 right-10 opacity-20 hidden lg:block">
+                <div className="grid grid-cols-4 gap-2">
+                    {[...Array(16)].map((_, i) => (
+                        <div key={i} className="w-2 h-2 rounded-full bg-gray-400"></div>
+                    ))}
+                </div>
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
 
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-[#D96324] font-semibold mb-2 block tracking-wide uppercase text-sm"
-                    >
-                        Success Stories & Insights
-                    </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl font-bold text-gray-900 mb-6"
+                        className="text-5xl font-bold text-gray-900 mb-6"
                     >
                         Blogs
                     </motion.h2>
-                    <motion.p
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="text-gray-500 max-w-2xl mx-auto"
+                        transition={{ delay: 0.1 }}
+                        className="space-y-1"
                     >
-                        Stay up to date with the latest trends and breakthroughs in the world of AI verification.
-                    </motion.p>
+                        <p className="text-[#D96324] text-lg font-medium">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                        <p className="text-slate-600 text-lg">
+                            Lorem Ipsum has been the industry's standard.
+                        </p>
+                    </motion.div>
                 </div>
 
                 {/* Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {blogPosts.map((post, index) => (
                         <motion.div
                             key={post.id}
@@ -49,46 +61,38 @@ const Blogs = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            whileHover={{ y: -10 }}
-                            className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                            className="relative group"
                         >
-                            {/* Image Wrapper */}
-                            <div className="relative h-56 overflow-hidden">
-                                <img
-                                    src={post.image}
-                                    alt={post.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                                />
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-blue-600 uppercase tracking-wider">
-                                    {post.category}
-                                </div>
-                            </div>
+                            {/* Card Glow Effect */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-b from-transparent to-purple-200 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 group-hover:duration-200 translate-y-4"></div>
+                            {/* Fixed Bottom Gradient Shadow as seen in image */}
+                            <div className="absolute -bottom-6 left-4 right-4 h-12 bg-purple-100 blur-xl rounded-full opacity-70 pointer-events-none"></div>
 
-                            {/* Content */}
-                            <div className="p-8">
-                                <div className="flex items-center gap-2 text-gray-400 text-sm mb-4">
-                                    <Calendar size={14} />
-                                    <span>{post.date}</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                                    {post.title}
-                                </h3>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                                    {post.excerpt}
-                                </p>
-                                <div className="flex items-center text-[#D96324] font-medium text-sm group-hover:gap-2 transition-all">
-                                    Read More <ArrowRight size={16} className="ml-1" />
+                            <div className="relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col justify-between">
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-4 leading-snug">
+                                        {post.title}
+                                    </h3>
+                                    <p className="text-blue-500 text-sm font-medium mb-4">
+                                        {post.date}
+                                    </p>
+                                    <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                                        {post.excerpt}
+                                    </p>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* View All Button */}
-                <div className="mt-16 text-center">
-                    <Button variant="outline" className="rounded-full px-8 border-gray-300 text-gray-600 hover:border-blue-600 hover:text-blue-600">
-                        View All Articles
-                    </Button>
+                {/* Navigation Buttons */}
+                <div className="flex justify-center flex-wrap gap-4">
+                    <button className="w-12 h-12 rounded-lg bg-[#537CD3] text-white flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">
+                        <ArrowLeft size={24} />
+                    </button>
+                    <button className="w-12 h-12 rounded-lg bg-[#537CD3] text-white flex items-center justify-center hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">
+                        <ArrowRight size={24} />
+                    </button>
                 </div>
 
             </div>
