@@ -1,9 +1,12 @@
 import { Shield, Banknote, HeartPulse, Layers, Zap, FileSearch } from 'lucide-react';
-import licenseCard from '../assets/license_card.png';
-import invoiceDoc from '../assets/invoice_document.png';
-import docsimImg from '../assets/docsim.png';
-import doxtractImg from '../assets/doxtract.png';
-import docpilotImg from '../assets/docpilot.png';
+import licenseCard from '../images/license_card.png';
+import invoiceDoc from '../images/invoice_document.png';
+import docsimImg from '../images/docsim.png';
+import doxtractImg from '../images/doxtract.png';
+import docpilotImg from '../images/docpilot.png';
+import brandDocSim from '../images/brand_docsim.png';
+import brandDoxtract from '../images/brand_doxtract.png';
+import brandDocPilot from '../images/brand_docpilot.png';
 
 export const navLinks = [
     { name: 'Home', href: '#' },
@@ -48,6 +51,7 @@ export const productsData = [
     {
         id: 'docsim',
         badge: 'DocSim',
+        brandLogo: brandDocSim,
         title: 'AI-Powered Document Similarity Engine',
         features: [
             'Detects near-duplicates and tampered documents.',
@@ -66,6 +70,7 @@ export const productsData = [
     {
         id: 'doxtract',
         badge: 'Doxtract',
+        brandLogo: brandDoxtract,
         title: 'Extract, Validate, and Process Documents with Ease',
         features: [
             'OCR and NLP-based data extraction.',
@@ -84,6 +89,7 @@ export const productsData = [
     {
         id: 'docpilot',
         badge: 'DocPilot',
+        brandLogo: brandDocPilot,
         title: 'Streamline Document Workflows with Automation',
         features: [
             'Automates document collection, routing, and task assignments.',

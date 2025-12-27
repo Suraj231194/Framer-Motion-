@@ -3,12 +3,12 @@ import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Button from './Button';
 
 import { productsData } from '../constants/data';
-import gradientCircle from '../assets/gradient_circle.png';
+import gradientCircle from '../images/gradient_circle.png';
 
 const ProductCard = ({ product }) => {
+    // ... logic remains same ...
     const isTextLeft = product.layout === 'left';
-
-    // 3D Tilt Logic
+    // ... 3D Tilt Logic ...
     const ref = useRef(null);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
@@ -46,9 +46,9 @@ const ProductCard = ({ product }) => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
             >
-                <span className="inline-block py-1 px-4 rounded-full bg-[#D96324] text-white text-xs font-bold mb-6 shadow-lg shadow-orange-500/20 uppercase tracking-wider">
-                    {product.badge}
-                </span>
+                <div className="mb-6">
+                    <img src={product.brandLogo} alt={product.badge} className="h-12 w-auto object-contain" />
+                </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
                     {product.title}
                 </h3>

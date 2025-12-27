@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { industriesData } from '../constants/data';
-
-import dotsIndustry1 from '../assets/dots_industry_1.png';
-import dotsIndustry2 from '../assets/dots_industry_2.png';
-import blueCircle from '../assets/blue_circle.png';
+import dotsIndustry1 from '../images/dots_industry_1.png';
+import dotsIndustry2 from '../images/dots_industry_2.png';
+import blueCircle from '../images/blue_circle.png';
 
 const ChipIcon = ({ Icon }) => (
     <div className="relative w-16 h-16 flex items-center justify-center mb-6">

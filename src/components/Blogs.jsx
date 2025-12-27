@@ -4,9 +4,8 @@ import { motion } from 'framer-motion';
 import Button from './Button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../constants/data';
-
-import dots2 from '../assets/dots_2.png';
-import dots3 from '../assets/dots_3.png';
+import dots2 from '../images/dots_2.png';
+import dots3 from '../images/dots_3.png';
 
 const Blogs = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/brand_logo.png';
+import logo from '../assets/images/brand_logo.png';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Industries from '../components/Industries';

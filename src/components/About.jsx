@@ -3,7 +3,7 @@ import Section from './Section';
 import { Eye, Target, Linkedin, Twitter, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { teamMembers } from '../constants/data';
-import combinedCircle from '../assets/combined_circle.png';
+import combinedCircle from '../images/combined_circle.png';
 
 const About = () => {
     const [activeIndex, setActiveIndex] = useState(1);

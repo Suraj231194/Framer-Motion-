@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 import { heroDocuments } from '../constants/data';
-import heroBg from '../assets/hero_bg.png';
+import heroBg from '../images/hero_bg.png';
 
 const Hero = () => {
     const [activeIndex, setActiveIndex] = useState(0);

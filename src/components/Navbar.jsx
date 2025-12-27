@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { navLinks } from '../constants/data';
-import logo from '../assets/brand_logo.png';
+import logo from '../images/brand_logo.png';
 
 const Navbar = ({ showLogo = true }) => {
     const [isOpen, setIsOpen] = useState(false);
