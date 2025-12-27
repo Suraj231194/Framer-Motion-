@@ -2,6 +2,9 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { industriesData } from '../constants/data';
 
+import dots1 from '../assets/dots_1.png';
+import blueCircle from '../assets/blue_circle.png';
+
 const ChipIcon = ({ Icon }) => (
     <div className="relative w-16 h-16 flex items-center justify-center mb-6">
         {/* Circuit/Chip Background Effect */}
@@ -33,19 +36,14 @@ const Industries = () => {
             {/* Background Blue Circle */}
             <motion.div
                 style={{ y: yBg }}
-                className="absolute left-[-20%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-50/60 rounded-full blur-3xl -z-10 pointer-events-none"
-            />
+                className="absolute left-[-15%] top-0 w-[900px] h-[900px] -z-10 pointer-events-none opacity-60"
+            >
+                <img src={blueCircle} alt="Background Effect" className="w-full h-full object-contain" />
+            </motion.div>
 
             {/* Dot Pattern (Right) */}
-            <div className="absolute right-0 top-1/4 opacity-20 hidden lg:block pointer-events-none">
-                <svg width="200" height="400" fill="none">
-                    <defs>
-                        <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                            <circle cx="2" cy="2" r="2" className="text-gray-400" fill="currentColor" />
-                        </pattern>
-                    </defs>
-                    <rect width="200" height="400" fill="url(#dots)" />
-                </svg>
+            <div className="absolute right-0 top-1/4 z-0 pointer-events-none opacity-40 hidden lg:block">
+                <img src={dots1} alt="Dots Pattern" className="w-48 h-auto" />
             </div>
 
             <div className="container mx-auto px-6">

@@ -5,23 +5,18 @@ import Button from './Button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { blogPosts } from '../constants/data';
 
+import dots2 from '../assets/dots_2.png';
+import dots3 from '../assets/dots_3.png';
+
 const Blogs = () => {
     return (
         <Section id="blog" className="bg-white py-24 relative overflow-hidden">
             {/* Background Decorative Dots */}
-            <div className="absolute top-10 left-10 opacity-20 hidden lg:block">
-                <div className="grid grid-cols-4 gap-2">
-                    {[...Array(16)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 rounded-full bg-gray-400"></div>
-                    ))}
-                </div>
+            <div className="absolute top-10 left-10 z-0 pointer-events-none opacity-40 hidden lg:block">
+                <img src={dots2} alt="Dots Pattern" className="w-24 h-auto" />
             </div>
-            <div className="absolute bottom-10 right-10 opacity-20 hidden lg:block">
-                <div className="grid grid-cols-4 gap-2">
-                    {[...Array(16)].map((_, i) => (
-                        <div key={i} className="w-2 h-2 rounded-full bg-gray-400"></div>
-                    ))}
-                </div>
+            <div className="absolute bottom-10 right-10 z-0 pointer-events-none opacity-40 hidden lg:block">
+                <img src={dots3} alt="Dots Pattern" className="w-24 h-auto" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">

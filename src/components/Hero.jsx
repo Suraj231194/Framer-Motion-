@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 import { heroDocuments } from '../constants/data';
+import heroBg from '../assets/hero_bg.png';
 
 const Hero = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -74,26 +75,10 @@ const Hero = () => {
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden bg-white">
             {/* Background Animations */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.svg
-                    className="absolute w-full h-full opacity-30 text-blue-100"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    <path d="M0 50 Q 25 30 50 50 T 100 50 V 100 H 0 Z" fill="currentColor" />
-                    <path d="M0 30 Q 25 10 50 30 T 100 30 V 100 H 0 Z" fill="transparent" stroke="currentColor" strokeWidth="0.5" />
-                </motion.svg>
-
-                <motion.div
-                    animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl -z-10 mix-blend-multiply"
-                />
-                <motion.div
-                    animate={{ scale: [1, 1.1, 1], x: [0, 50, 0] }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-orange-50/30 rounded-full blur-3xl -z-10 mix-blend-multiply"
+                <img
+                    src={heroBg}
+                    alt="Background"
+                    className="w-full h-full object-cover object-center opacity-80"
                 />
             </div>
 
