@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { industriesData } from '../constants/data';
 
-import dots1 from '../assets/dots_1.png';
+import dotsIndustry1 from '../assets/dots_industry_1.png';
+import dotsIndustry2 from '../assets/dots_industry_2.png';
 import blueCircle from '../assets/blue_circle.png';
 
 const ChipIcon = ({ Icon }) => (
@@ -29,21 +30,28 @@ const ChipIcon = ({ Icon }) => (
 const Industries = () => {
     const sectionRef = useRef(null);
     const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
-    const yBg = useTransform(scrollYProgress, [0, 1], [0, -100]);
+    const yBg = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
     return (
         <section ref={sectionRef} className="relative py-20 lg:py-32 overflow-hidden bg-white" id="industries">
-            {/* Background Blue Circle */}
+            {/* Background Elements */}
+
+            {/* 1. Large Blue Ring styling - Left aligned behind text */}
             <motion.div
                 style={{ y: yBg }}
-                className="absolute left-[-15%] top-0 w-[900px] h-[900px] -z-10 pointer-events-none opacity-60"
+                className="absolute left-[-15%] top-1/2 -translate-y-1/2 w-[800px] h-[800px] -z-10 pointer-events-none opacity-80"
             >
-                <img src={blueCircle} alt="Background Effect" className="w-full h-full object-contain" />
+                <img src={blueCircle} alt="Background Ring" className="w-full h-full object-contain" />
             </motion.div>
 
-            {/* Dot Pattern (Right) */}
-            <div className="absolute right-0 top-1/4 z-0 pointer-events-none opacity-40 hidden lg:block">
-                <img src={dots1} alt="Dots Pattern" className="w-48 h-auto" />
+            {/* 2. Top Right Dots */}
+            <div className="absolute right-10 top-20 z-0 pointer-events-none opacity-40 hidden lg:block">
+                <img src={dotsIndustry1} alt="Dots Pattern" className="w-32 h-auto" />
+            </div>
+
+            {/* 3. Bottom Right Dots */}
+            <div className="absolute right-20 bottom-20 z-0 pointer-events-none opacity-40 hidden lg:block">
+                <img src={dotsIndustry2} alt="Dots Pattern" className="w-48 h-auto" />
             </div>
 
             <div className="container mx-auto px-6">
